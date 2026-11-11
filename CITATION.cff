@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use Quant MCP Trader in your research or projects, please cite it as below."
+title: "Quant MCP Trader"
+authors:
+  - family-names: "Ferdows"
+    given-names: "FS"
+    email: "fsferdows@icloud.com"
+url: "https://github.com/fsferdows/quant-mcp-trader"
+repository-code: "https://github.com/fsferdows/quant-mcp-trader"
+license: MIT
+keywords:
+  - freqtrade
+  - model-context-protocol
+  - mcp
+  - algorithmic-trading
+  - crypto
+  - backtesting

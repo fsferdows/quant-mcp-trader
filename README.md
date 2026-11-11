@@ -103,7 +103,13 @@ Download 90 days of Binance historical data, run the backtest with protections, 
 ./run_paper_trade.sh
 ```
 
-Once running, open **FreqUI** at `http://127.0.0.1:8080` (default local dry-run username `freqtrader`, password defined in your generated `config.json`).
+Optionally set your own custom Bot Name, Username, and Password for FreqUI and `freqtrade-mcp`:
+
+```bash
+./set_credentials.sh
+```
+
+Once running, open **FreqUI** at `http://localhost:8080` and sign in with your configured username and password (from `config.json`, or run `./set_credentials.sh`).
 
 ---
 
