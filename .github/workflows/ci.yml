@@ -1,0 +1,35 @@
+name: Repository Validation CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate JSON configs and Python/JS syntax
+        run: |
+          python3 -m json.tool config.example.json > /dev/null
+          python3 -m json.tool .agents/plugins/freqtrade-trading/plugin.json > /dev/null
+          python3 -m json.tool .agents/plugins/freqtrade-trading/mcp_config.example.json > /dev/null
+          python3 -m json.tool mcp_servers/ccxt-mcp/package.json > /dev/null
+          python3 -m json.tool mcp_servers/crypto-indicators-mcp/package.json > /dev/null
+          python3 -m py_compile user_data/strategies/*.py mcp_servers/freqtrade-mcp/__main__.py mcp_servers/crypto-feargreed-mcp/main.py
+          node --check mcp_servers/crypto-indicators-mcp/index.js
+          bash -n setup.sh run_backtest.sh run_paper_trade.sh

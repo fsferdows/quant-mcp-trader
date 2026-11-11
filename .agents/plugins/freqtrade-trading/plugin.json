@@ -1,0 +1,6 @@
+{
+  "name": "freqtrade-trading",
+  "displayName": "Freqtrade Real-Time Paper Trading & Research",
+  "version": "1.0.0",
+  "description": "Workspace plugin bundling Freqtrade, CCXT, technical indicators, and Fear & Greed MCP servers with strategy backtesting, real-time analysis, and risk management skills."
+}

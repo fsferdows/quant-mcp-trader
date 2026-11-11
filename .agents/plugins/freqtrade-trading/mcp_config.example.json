@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "freqtrade-mcp": {
+      "command": "__REPO_ROOT__/mcp_servers/.venv/bin/python",
+      "args": [
+        "__REPO_ROOT__/mcp_servers/freqtrade-mcp/__main__.py"
+      ],
+      "env": {
+        "FREQTRADE_API_URL": "http://127.0.0.1:8080",
+        "FREQTRADE_USERNAME": "freqtrader",
+        "FREQTRADE_PASSWORD": "change-me-local-password"
+      }
+    },
+    "crypto-indicators-mcp": {
+      "command": "__NODE_BIN__",
+      "args": [
+        "__REPO_ROOT__/mcp_servers/crypto-indicators-mcp/index.js"
+      ],
+      "env": {
+        "EXCHANGE_NAME": "binance"
+      }
+    },
+    "crypto-feargreed-mcp": {
+      "command": "__REPO_ROOT__/mcp_servers/.venv/bin/python",
+      "args": [
+        "__REPO_ROOT__/mcp_servers/crypto-feargreed-mcp/main.py"
+      ]
+    },
+    "ccxt-mcp": {
+      "command": "__NODE_BIN__",
+      "args": [
+        "__REPO_ROOT__/mcp_servers/ccxt-mcp/node_modules/ccxt-mcp/js/server.js"
+      ],
+      "env": {
+        "CCXT_MCP_CONFIG": "__REPO_ROOT__/mcp_servers/ccxt-mcp/ccxt_config.json"
+      }
+    }
+  }
+}

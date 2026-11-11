@@ -1,0 +1,10 @@
+[project]
+name = "freqtrade-mcp"
+version = "0.1.0"
+description = "An MCPserver that integrates with the Freqtrade cryptocurrency trading bot via its REST API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "freqtrade-client>=2025.2",
+    "mcp[cli]>=1.5.0",
+]
